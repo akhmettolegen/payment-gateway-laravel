@@ -1,0 +1,19 @@
+{
+    "name": "hb/epay",
+    "description": "HB payment gateway",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SprintSquads",
+            "email": "sprintsquads@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "hb\\epay\\": "src/"
+        }
+    },
+    "require": {}
+}
