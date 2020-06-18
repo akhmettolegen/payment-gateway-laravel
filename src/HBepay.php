@@ -23,14 +23,18 @@ class HBepay
     {
         $test_url = "https://testoauth.homebank.kz/epay2/oauth2/token";
         $prod_url = "https://epay-oauth.homebank.kz/oauth2/token";
+        $test_page = "https://test-epay.homebank.kz/payform/payment-api.js";
+        $prod_page = "https://epay.homebank.kz/payform/payment-api.js";
         $token_api_url = "";
         $err_exist = false;
         $err = "";
 
         if ($hbp_env === "test") {
             $token_api_url = $test_url;
+            $pay_page = $test_page;
         } else {
             $token_api_url = $prod_url;
+            $pay_page = $prod_page;
         }
 
         $fields = [
@@ -81,7 +85,7 @@ class HBepay
                         "email" => $hbp_email
                     ];
                 ?>
-                <script src="https://test-epay.homebank.kz/payform/payment-api.js"></script>
+                <script src="<?=$pay_page?>"></script>
                 <script>
                     halyk.pay(<?= json_encode($hbp_payment_object) ?>);
                 </script>
